@@ -1,3 +1,4 @@
+//Hooks use only in the root of the code without any nesting (for, if and so on)
 import React, { useState } from 'react';
 
 const todo = props => {
