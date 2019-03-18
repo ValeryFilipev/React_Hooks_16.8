@@ -1,5 +1,5 @@
 //Hooks use only in the root of the code without any nesting (for, if and so on)
-import React, { useState, useEffect, useReducer, useRef } from 'react';
+import React, { useState, useEffect, useReducer, useRef, useMemo } from 'react';
 import axios from 'axios';
 
 import List from './List';
@@ -121,7 +121,7 @@ const todo = props => {
       <button type="button" onClick={todoAddHandler}>
         Add
       </button>
-      <List items={todoList} onClick={todoRemoveHandler} />
+      {useMemo(() => <List items={todoList} onClick={todoRemoveHandler} />, [todoList])}
     </>
   );
 };
